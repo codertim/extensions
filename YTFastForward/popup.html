@@ -1,0 +1,26 @@
+<link href="popup.css" rel="stylesheet" type="text/css" />
+<script type="module" src="popup.js"></script>
+
+<div class="container test1" style="width:400px;">
+  <div>
+    <div class="title">Fast forward and backward</div>
+
+    <div>
+      <button id="ff10s" data-fftime="10" class="time-btn">>> 10s</button>
+      <button id="ff30s" data-fftime="30" class="time-btn">>> 30s</button>
+      <button id="ff60s" data-fftime="60" class="time-btn">>> 1m</button>
+      <button id="ff10m" data-fftime="600" class="time-btn">>> 10m</button>
+      <button id="ff1h" data-fftime="3600" class="time-btn">>> 1h</button>
+    </div>
+
+    <div>
+      <button id="fb10s" data-fbtime="10" class="time-btn"><< 10s</button>
+      <button id="fb30s" data-fbtime="30" class="time-btn"><< 30s</button>
+      <button id="fb60s" data-fbtime="60" class="time-btn"><< 1m</button>
+      <button id="fb10m" data-fbtime="600" class="time-btn"><< 10m</button>
+      <button id="fb1h" data-fbtime="3600" class="time-btn"><< 1h</button>
+    </div>
+
+    <div class="bookmarks" id="bookmarks"></div>
+  </div>
+</div>
