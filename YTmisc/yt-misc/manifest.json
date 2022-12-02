@@ -1,7 +1,7 @@
 {
-  "name": "My YT Fast Forward",
+  "name": "My YT Misc Stuff",
   "version": "0.1.0",
-  "description": "Fast Forward in YT videos",
+  "description": "Misc Stuff with YT videos",
   "permissions": ["storage", "tabs"],
   "host_permissions": ["https://*.youtube.com/*"],
   "background": {

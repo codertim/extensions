@@ -1,0 +1,32 @@
+.container {
+  background-color: #ff5f1f;
+  color: #333;
+  width: 280px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.textbox {
+  width: 100%;
+  font-size: 12px;
+  margin: 0;
+  padding: 0px 2px;
+}
+
+.textbox:focus {
+  outline: 0;
+  border-color: #66afe9;
+}
+
+.time-btn {
+  background-color: #555;
+  border: 0px solid #fff;
+  border-radius: 5px;
+  color: #ff5f1f;
+  margin: 5px;;
+  padding: 0.5em;
+}
