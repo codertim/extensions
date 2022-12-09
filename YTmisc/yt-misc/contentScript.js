@@ -3,6 +3,11 @@
   let currentVideo = "";
 
   
+  const hideRightNav = () => {
+    console.log("##### hideRightNav - starting");
+    const rightNavEl = document.getElementById("secondary");
+    rightNavEl.style.opacity = 0.1;
+  };
 
   const checkSkipButton = () => {
       console.log("##### checkSkipButton - starting");
@@ -42,6 +47,9 @@
     } else if ( type === "SKIP") {
       console.log("##### contentScript #onMessage - SKIP section starting ...");
       checkSkipButton();
+    } else if ( type === "HIDE-RIGHT-NAV") {
+      console.log("##### contentScript #onMessage - hide right nav ...");
+      hideRightNav();
     }
   });
 

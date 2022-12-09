@@ -3,10 +3,22 @@ import { getActiveTabURL } from "./utils.js";
 
 
 const onSkip = async e => {
+  console.log("##### onSkip - starting ...");
   const activeTab = await getActiveTabURL();
 
   chrome.tabs.sendMessage(activeTab.id, {
     type: "SKIP",
+    value: "NONE",
+  });
+};
+
+
+const onHideRightNav = async e => {
+  console.log("##### onHideRightNav - starting ...");
+  const activeTab = await getActiveTabURL();
+
+  chrome.tabs.sendMessage(activeTab.id, {
+    type: "HIDE-RIGHT-NAV",
     value: "NONE",
   });
 };
@@ -17,7 +29,11 @@ const showControls = () => {
 
   // forwards
   const skipBtn = document.getElementById("skip");
-  sipBtn.addEventListener("click", onSkip);
+  skipBtn.addEventListener("click", onSkip);
+
+  // hide right nav
+  const hideRightNavBtn = document.getElementById("hide-right-nav");
+  hideRightNavBtn.addEventListener("click", onHideRightNav);
 };
 
 
@@ -28,7 +44,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const currentVideo = urlParameters.get("v");
 
-  
   showControls();
 });
 
