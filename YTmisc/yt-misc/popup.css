@@ -30,3 +30,11 @@
   margin: 5px;;
   padding: 0.5em;
 }
+
+div#buttons-section {
+  margin: 0.5rem;
+}
+
+section#bottom-spacer {
+  height: 0.1rem;
+}
