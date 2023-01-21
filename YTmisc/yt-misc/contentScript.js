@@ -6,6 +6,7 @@
   const hideRightNav = () => {
     console.log("##### hideRightNav - starting");
     const rightNavEl = document.getElementById("secondary");
+    console.log("##### hideRightNav - rightNavEl:", rightNavEl);
     rightNavEl.style.opacity = 0.1;
   };
 

@@ -16,6 +16,7 @@ const onSkip = async e => {
 const onHideRightNav = async e => {
   console.log("##### onHideRightNav - starting ...");
   const activeTab = await getActiveTabURL();
+  console.log("##### onHideRightNav - activeTab:", activeTab);
 
   chrome.tabs.sendMessage(activeTab.id, {
     type: "HIDE-RIGHT-NAV",
