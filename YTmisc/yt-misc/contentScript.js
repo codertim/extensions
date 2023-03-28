@@ -40,6 +40,7 @@
 
   
   chrome.runtime.onMessage.addListener((obj, sender, response) => {
+    console.log("##### contentScript.js - chrome.runtime.onMessage.addListener - starting - obj:", obj);
     const { type, value, videoId } = obj;
 
     if (type === "NEW") {
