@@ -1,8 +1,22 @@
 (() => {
   let youtubeLeftControls, youtubePlayer;
   let currentVideo = "";
+  let videoOpacity = 1.0;
 
   
+  const dimVideo = () => {
+    console.log("##### contentScript#dimVideo - starting");
+    const videoEl = document.getElementById("primary-inner");
+    console.log("##### contentScript#dimVideo - videoEl:", videoEl);
+    console.log("##### contentScript#deimVideo - current opacity:", videoEl.style.opacity);
+    videoOpacity = videoOpacity - 0.1;
+    console.log("##### contentScript#deimVideo - new video opacity:", videoOpacity);
+    if (videoOpacity < 0) {
+      videoOpacity = 1.0;
+    }
+    videoEl.style.opacity = videoOpacity;
+  };
+
   const hideRightNav = () => {
     console.log("##### contentScript#hideRightNav - starting");
     const rightNavEl = document.getElementById("secondary-inner");
@@ -52,6 +66,9 @@
     } else if ( type === "HIDE-RIGHT-NAV") {
       console.log("##### contentScript #onMessage - hide right nav ...");
       hideRightNav();
+    } else if ( type === "DIM-VIDEO") {
+      console.log("##### contentScript #onMessage - dim video ...");
+      dimVideo();
     }
   });
 

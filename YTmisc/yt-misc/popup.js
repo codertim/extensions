@@ -25,6 +25,17 @@ const onHideRightNav = async e => {
 };
 
 
+const onDimVideo = async e => {
+  console.log("##### popup#onDimVideo - starting");
+  const activeTab = await getActiveTabURL();
+  console.log("##### popup#onDimVideo - activeTab:", activeTab);
+  chrome.tabs.sendMessage(activeTab.id, {
+    type: "DIM-VIDEO",
+    value: "NONE",
+  });
+};
+
+
 const showControls = () => {
   console.log("##### showControls - starting ...");
 
@@ -35,6 +46,10 @@ const showControls = () => {
   // hide right nav
   const hideRightNavBtn = document.getElementById("hide-right-nav");
   hideRightNavBtn.addEventListener("click", onHideRightNav);
+
+  // dim video
+  const dimVideoBtn = document.getElementById("dim-video");
+  dimVideoBtn.addEventListener("click", onDimVideo);
 };
 
 
